@@ -7,8 +7,8 @@ import java.awt.*;
 
 public class ComplementaryColorPanel extends ColorPanel implements ChangeListener{
 
-	public ComplementaryColorPanel(Color initialColor) {
-		super(initialColor);
+	public ComplementaryColorPanel(Color init) {
+		super(init);
 		DisplayColors.saturationSlider.addChangeListener(this);
         DisplayColors.brightnessSlider.addChangeListener(this);
 		DisplayColors.hueSlider.addChangeListener(this);
@@ -16,6 +16,7 @@ public class ComplementaryColorPanel extends ColorPanel implements ChangeListene
 	
 	public void stateChanged(ChangeEvent e) {
         if (DisplayColors.hueSlider != null && DisplayColors.saturationSlider != null && DisplayColors.brightnessSlider != null) {
+        	
             float newHue = (float) DisplayColors.hueSlider.getValue() / 100;
             float newSaturation = (float) DisplayColors.saturationSlider.getValue() / 100;
             float newBrightness = (float)DisplayColors.brightnessSlider.getValue() / 100;
@@ -30,8 +31,4 @@ public class ComplementaryColorPanel extends ColorPanel implements ChangeListene
 
         }
     }
-	
-	
-	
-	
 }

@@ -7,14 +7,15 @@ import java.awt.*;
 
 public class OriginalColorPanel extends ColorPanel implements ChangeListener{
 
-	public OriginalColorPanel(Color initialColor) {
-		super(initialColor);
+	public OriginalColorPanel(Color init) {
+		super(init);
 		DisplayColors.hueSlider.addChangeListener(this);
         DisplayColors.saturationSlider.addChangeListener(this);
         DisplayColors.brightnessSlider.addChangeListener(this);
 	}
 	
 	public void stateChanged(ChangeEvent e) {
+		
         if (DisplayColors.hueSlider != null && DisplayColors.saturationSlider != null && DisplayColors.brightnessSlider != null) {
             
         	float newHue = (float) DisplayColors.hueSlider.getValue() / 100;
@@ -26,5 +27,4 @@ public class OriginalColorPanel extends ColorPanel implements ChangeListener{
 
         }
     }
-	
 }
